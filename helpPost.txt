@@ -1,0 +1,52 @@
+It looks like the callback is meant to be a page on your web server that 
+the smsgateway.me requests to inform you that there is a message. 
+
+You want a php script on your webserver that might contain something like 
+the following code: 
+
+<?php 
+
+$mysecret = '<your api callback secret>'; 
+
+if ($_POST['secret'] == $mysecret) { 
+
+  switch($_POST['event']) { 
+
+    case 'Received': 
+      // an sms was received 
+      // process received message 
+      break; 
+
+    case 'Sent': 
+      // an sms was sent 
+      break; 
+
+    case 'Update': 
+      // there was an update 
+      break; 
+
+    default: 
+      // this should never happen 
+      error_log('bad api callback event received in smscallback.php', 0); 
+  } 
+
+} 
+else { 
+  // record in your log that the secret was wrong 
+  error_log('bad api callback secret received in smscallback.php', 0); 
+} 
+
+Then you log in to your account at smsgateway.me, you go to the events 
+page, you set up a callback event for received messages, you use the http 
+method, you set the secret to <your api callback secret> and you set the 
+http url to http://your-web-server-address/path/to/smscallback.php 
+
+This will inly work if the smsgateway.me server can connect to 
+
+http://your-web-server-address/path/to/smscallback.php 
+
+If you are working from home with dynamic ip on adsl you will have all 
+sorts of network configuration issues to resolve, none of which are 
+relevant to the php newsgroup. 
+
+-- 
