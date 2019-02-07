@@ -1,2 +1,0 @@
-authKey = ''
-celHuaweiId = 
