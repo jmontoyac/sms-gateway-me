@@ -1,2 +1,2 @@
-authKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTUzMTU4NDEyNywiZXhwIjo0MTAyNDQ0ODAwLCJ1aWQiOjU2OTQ4LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.DFWk-x9kJ3wWTKLxvK5oggx1otHkG2smyIM5i_HDpiY'
-celHuaweiId = 96295
+authKey = ''
+celHuaweiId = 
